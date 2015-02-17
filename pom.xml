@@ -61,6 +61,27 @@
   </modules>
 
   <build>
+  <pluginManagement>
+    <plugins>
+        <plugin>
+          <groupId>org.eclipse.tycho</groupId>
+          <artifactId>tycho-p2-plugin</artifactId>
+          <version>${tycho.version}</version>
+          <configuration>
+            <!-- baselineMode options: disable, warn, fail -->
+            <baselineMode>${baselineMode}</baselineMode>
+            <!-- baselineReplace options: none, all -->
+            <baselineReplace>none</baselineReplace>
+            <baselineRepositories> 
+              <repository>
+                <url>${cs-studio-central.url}</url>
+              </repository>
+            </baselineRepositories>
+          </configuration>
+        </plugin>
+      </plugins> 
+    </pluginManagement>
+
     <plugins>
       <plugin>
         <groupId>org.eclipse.tycho</groupId>

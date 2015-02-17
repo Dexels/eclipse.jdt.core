@@ -14,6 +14,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.Set;
@@ -34,7 +35,6 @@ public class Archive {
 	
 	private Archive() {
 		// used to construct UNKNOWN_ARCHIVE
-		packagesCache = new Hashtable<String, ArrayList<String>>();
 	}
 
 	public Archive(File file) throws ZipException, IOException {
@@ -86,6 +86,10 @@ public class Archive {
 	
 	public ArrayList<String> getTypes(String packageName) {
 		// package name is expected to ends with '/'
+
+		if(this.packagesCache==null) {
+			return null;
+		}
 		return this.packagesCache.get(packageName);
 	}
 	

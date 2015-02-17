@@ -34,6 +34,7 @@ public class Archive {
 	
 	private Archive() {
 		// used to construct UNKNOWN_ARCHIVE
+		packagesCache = new Hashtable<String, ArrayList<String>>();
 	}
 
 	public Archive(File file) throws ZipException, IOException {

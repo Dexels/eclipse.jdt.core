@@ -310,6 +310,7 @@ public class EclipseFileManager implements StandardJavaFileManager {
 			File[] directoriesToCheck = null;
 			if (System.getProperty("os.name").startsWith("Mac")) {//$NON-NLS-1$//$NON-NLS-2$
 				directoriesToCheck = new File[] { new File(javaHomeFile, "../Classes"), //$NON-NLS-1$
+						new File(javaHomeFile, "lib")
 				};
 			} else {
 				directoriesToCheck = new File[] { new File(javaHomeFile, "lib") //$NON-NLS-1$
